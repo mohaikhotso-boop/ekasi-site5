@@ -1,0 +1,287 @@
+:root {
+  --bg: #fffdf6;
+  --surface: #ffffff;
+  --ink: #1b2150;
+  --muted: #4d5380;
+  --yellow: #f2c516;
+  --teal: #8ccbdb;
+  --green: #3e9e34;
+  --rust: #9a4f1c;
+  --orange: #e2701f;
+  --line: #e8e1c8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif;
+  line-height: 1.1;
+  margin: 0 0 8px;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+header,
+main,
+#contact,
+footer {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.logo {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  color: var(--rust);
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  padding: 40px 0 56px;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 8vw, 84px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--rust);
+}
+
+.hero p {
+  max-width: 46ch;
+  color: var(--muted);
+  font-size: 19px;
+  margin: 18px 0 26px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  margin: 0 12px 12px 0;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.btn-outline {
+  background: transparent;
+}
+
+#services,
+#how,
+#quote,
+#contact {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  border-top: 2px solid var(--line);
+}
+
+h2 {
+  font-size: clamp(30px, 5vw, 46px);
+}
+
+#services > p,
+#how > p,
+#quote > p {
+  max-width: 56ch;
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.services article {
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.services article p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15.5px;
+}
+
+.services article:nth-child(3) {
+  background: var(--yellow);
+}
+
+.services article:nth-child(3) p {
+  color: var(--ink);
+}
+
+#how ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: step;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+#how li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 54px;
+}
+
+#how li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--green);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+#how strong {
+  display: block;
+  font-size: 19px;
+}
+
+#how span {
+  color: var(--muted);
+  font-size: 15.5px;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+  max-width: 520px;
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  border-radius: 18px;
+  padding: 22px;
+}
+
+label {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px;
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 16px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--orange);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+form button {
+  padding: 14px 22px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+#contact h3 {
+  font-size: 20px;
+  margin-top: 18px;
+}
+
+#contact p {
+  margin: 0;
+  color: var(--muted);
+}
+
+#contact a {
+  text-decoration: underline;
+  text-decoration-color: var(--orange);
+  text-underline-offset: 3px;
+}
+
+footer {
+  padding-top: 28px;
+  padding-bottom: 40px;
+  border-top: 2px solid var(--line);
+  color: var(--muted);
+  font-size: 14.5px;
+}
+
+footer p {
+  margin: 0;
+}
